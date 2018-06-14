@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  NativeModules
 } from 'react-native';
 
 type Props = {};
@@ -29,6 +30,9 @@ export default class App extends Component<Props> {
   }
 
   btnClicked = () =>{
+    var CalendarManager = NativeModules.CalendarManager;
+    CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+
     console.log("Button Tapped.");
   }
 }
