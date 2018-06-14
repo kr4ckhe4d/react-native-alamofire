@@ -13,11 +13,14 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
+RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location sampleFunc:(RCTResponseSenderBlock)callback)
 {
   RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
-  NSLog(@"Name: %@", name);
-  NSLog(@"Location: %@", location);
+
+  NSArray *params = @[@"Test1",
+                      @"Test2",
+                      @"Test3"];
+  callback(@[params]);
 }
 
 @end
