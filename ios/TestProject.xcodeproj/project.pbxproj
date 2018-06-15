@@ -14,6 +14,8 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* TestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TestProjectTests.m */; };
 		0D656D7020D2E6F200B6AC00 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D656D6F20D2E6F200B6AC00 /* CalendarManager.m */; };
+		0D656D9A20D2F0C400B6AC00 /* SwiftCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D656D9920D2F0C400B6AC00 /* SwiftCalendarManager.swift */; };
+		0D656D9D20D2F2B600B6AC00 /* SwiftCalendarManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D656D9C20D2F2B600B6AC00 /* SwiftCalendarManagerBridge.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -329,6 +331,9 @@
 		00E356F21AD99517003FC87E /* TestProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTests.m; sourceTree = "<group>"; };
 		0D656D6E20D2E6F200B6AC00 /* CalendarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CalendarManager.h; path = CalendarModule/CalendarManager.h; sourceTree = "<group>"; };
 		0D656D6F20D2E6F200B6AC00 /* CalendarManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CalendarManager.m; path = CalendarModule/CalendarManager.m; sourceTree = "<group>"; };
+		0D656D9620D2F08700B6AC00 /* TestProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D656D9920D2F0C400B6AC00 /* SwiftCalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftCalendarManager.swift; path = CalendarModule/SwiftCalendarManager.swift; sourceTree = "<group>"; };
+		0D656D9C20D2F2B600B6AC00 /* SwiftCalendarManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SwiftCalendarManagerBridge.m; path = CalendarModule/SwiftCalendarManagerBridge.m; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,6 +499,9 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				0D656D6E20D2E6F200B6AC00 /* CalendarManager.h */,
 				0D656D6F20D2E6F200B6AC00 /* CalendarManager.m */,
+				0D656D9620D2F08700B6AC00 /* TestProject-Bridging-Header.h */,
+				0D656D9920D2F0C400B6AC00 /* SwiftCalendarManager.swift */,
+				0D656D9C20D2F2B600B6AC00 /* SwiftCalendarManagerBridge.m */,
 			);
 			name = TestProject;
 			sourceTree = "<group>";
@@ -696,6 +704,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 0940;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1120,8 +1131,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				0D656D9A20D2F0C400B6AC00 /* SwiftCalendarManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				0D656D7020D2E6F200B6AC00 /* CalendarManager.m in Sources */,
+				0D656D9D20D2F2B600B6AC00 /* SwiftCalendarManagerBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1186,7 @@
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1193,6 +1207,7 @@
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TestProjectTests/Info.plist;
@@ -1211,6 +1226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = TestProject/Info.plist;
@@ -1221,6 +1237,9 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = TestProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1229,6 +1248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = TestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1238,6 +1258,8 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = TestProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestProject-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

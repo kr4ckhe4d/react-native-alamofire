@@ -31,9 +31,16 @@ export default class App extends Component<Props> {
 
   btnClicked = () =>{
     var CalendarManager = NativeModules.CalendarManager;
+    var SwiftCalendarManager = NativeModules.SwiftCalendarManager;
+    
     CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
       console.log("Result: ",result);
     });
+
+    SwiftCalendarManager.addEvent('One', 'Two', 3, (result) => {
+      console.log("Result Swift: ",result);
+    });
+
 
     console.log("Button Tapped.");
   }

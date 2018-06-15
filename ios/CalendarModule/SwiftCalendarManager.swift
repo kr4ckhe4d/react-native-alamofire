@@ -1,5 +1,5 @@
 //
-//  Swift Demo.swift
+//  SwiftCalendarManager.swift
 //  TestProject
 //
 //  Created by Nipuna H Herath on 6/15/18.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-class Swift_Demo: NSObject {
+@objc(SwiftCalendarManager)
+class SwiftCalendarManager: NSObject {
 
-  func greet(person: String) -> String {
-    let greeting = "Hello, " + person + "!"
-    return greeting
+  @objc func addEvent(_ name: String, location: String, date: NSNumber, callback: (RCTResponseSenderBlock) ) -> Void {
+    // Date is ready to use!
+    NSLog("%@ %@ %@", name, location, date)
+    callback( [[
+      "name": name,
+      "location": location,
+      "date" : date
+      ]])
   }
   
 }
