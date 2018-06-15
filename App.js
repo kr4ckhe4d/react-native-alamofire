@@ -41,7 +41,6 @@ export default class App extends Component<Props> {
       console.log("Result Swift: ",result);
     });
 
-
     console.log("Button Tapped.");
   }
 }
