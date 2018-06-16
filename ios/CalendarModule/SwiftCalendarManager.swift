@@ -24,7 +24,7 @@ class SwiftCalendarManager: NSObject {
   
   @objc func alamofireRequest(_ url: String, callback: @escaping (RCTResponseSenderBlock) ) -> Void {
 
-    Alamofire.request("https://jsonplaceholder.typicode.com/posts", method: .get).responseJSON { response in
+    Alamofire.request(url, method: .get).responseJSON { response in
       print("Request: \(String(describing: response.request))")   // original url request
       print("Response: \(String(describing: response.response))") // http url response
       print("Result: \(response)")                         // response serialization result

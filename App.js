@@ -41,7 +41,7 @@ export default class App extends Component<Props> {
     //   console.log("Result Swift: ",result);
     // });
 
-    SwiftCalendarManager.alamofireRequest('sample url',(result) => {
+    SwiftCalendarManager.alamofireRequest('https://jsonplaceholder.typicode.com/posts',(result) => {
       console.log("Result Alamofire: ",result);
     });
 
