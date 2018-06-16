@@ -9,32 +9,43 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity,
+  NativeModules
 } from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={this.btnClicked}
+          activeOpacity={1}>
+          <Text style={styles.text}>Click Here</Text>
+        </TouchableOpacity>
       </View>
     );
+  }
+
+  btnClicked = () =>{
+    var AlamofireManagerObjC = NativeModules.AlamofireManagerObjC;
+    // var SwiftCalendarManager = NativeModules.SwiftCalendarManager;
+    
+    AlamofireManagerObjC.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
+      console.log("Result: ",result);
+    });
+
+    // SwiftCalendarManager.addEvent('One', 'Two', 3, (result) => {
+    //   console.log("Result Swift: ",result);
+    // });
+
+    // SwiftCalendarManager.alamofireRequest('https://jsonplaceholder.typicode.com/posts',(result) => {
+    //   console.log("Result Alamofire: ",result);
+    // });
+
+    console.log("Button Tapped.");
   }
 }
 
@@ -44,15 +55,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    flexDirection: 'row'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffc400',
+    height: 50,
+    margin:20,
+    borderRadius: 3,
+    zIndex: 100,
+    flex:1
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
+  text: {
+    color: 'black',
+    backgroundColor: 'transparent'
+  }
 });
