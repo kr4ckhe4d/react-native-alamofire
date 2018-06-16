@@ -305,7 +305,6 @@
 		0D7A176820D4CB0800FF730D /* AlamofireManagerObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlamofireManagerObjC.h; path = Classes/AlamofireManagerObjC.h; sourceTree = "<group>"; };
 		0D7A176920D4CB0800FF730D /* AlamofireManagerObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AlamofireManagerObjC.m; path = Classes/AlamofireManagerObjC.m; sourceTree = "<group>"; };
 		0D7A179220D4CDB500FF730D /* ReactNativeAlamofire-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeAlamofire-Bridging-Header.h"; sourceTree = "<group>"; };
-		0D7A179320D4CDB500FF730D /* ReactNativeAlamofireTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeAlamofireTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D7A179820D4CE4D00FF730D /* AlamofireManagerSwiftBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlamofireManagerSwiftBridge.m; sourceTree = "<group>"; };
 		0D7A179B20D4CE6E00FF730D /* AlamofireManagerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamofireManagerSwift.swift; path = Classes/AlamofireManagerSwift.swift; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -427,7 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				0D7A179220D4CDB500FF730D /* ReactNativeAlamofire-Bridging-Header.h */,
-				0D7A179320D4CDB500FF730D /* ReactNativeAlamofireTests-Bridging-Header.h */,
 				0D7A179820D4CE4D00FF730D /* AlamofireManagerSwiftBridge.m */,
 			);
 			name = "Bridging Headers";

@@ -11,11 +11,35 @@ import {
   Text,
   View,
   TouchableOpacity,
-  NativeModules
+  NativeModules,
+  NativeEventEmitter
 } from 'react-native';
 
 type Props = {};
+
+const { AlamofireManagerObjC, AlamofireManagerSwift } = NativeModules;
+
+
 export default class App extends Component<Props> {
+
+  constructor(props) {
+    super(props);
+    this.subscription = null;
+}
+
+componentDidMount() {
+  const EVENT_NAME = new NativeEventEmitter(AlamofireManagerSwift);
+  this.subscription = EVENT_NAME.addListener(
+                           'MyEvent',
+                           (message) => {
+                            console.log("Progress: ", message,"%");
+                            if (message == 100){
+                              this.subscription.remove();
+                              console.log("Subscription Removed");
+                            }
+                           });
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -30,9 +54,6 @@ export default class App extends Component<Props> {
   }
 
   btnClicked = () =>{
-    var AlamofireManagerObjC = NativeModules.AlamofireManagerObjC;
-    var AlamofireManagerSwift = NativeModules.AlamofireManagerSwift;
-    
     // AlamofireManagerObjC.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
     //   console.log("Result: ",result);
     // });
