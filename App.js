@@ -33,12 +33,16 @@ export default class App extends Component<Props> {
     var CalendarManager = NativeModules.CalendarManager;
     var SwiftCalendarManager = NativeModules.SwiftCalendarManager;
     
-    CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
-      console.log("Result: ",result);
-    });
+    // CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
+    //   console.log("Result: ",result);
+    // });
 
-    SwiftCalendarManager.addEvent('One', 'Two', 3, (result) => {
-      console.log("Result Swift: ",result);
+    // SwiftCalendarManager.addEvent('One', 'Two', 3, (result) => {
+    //   console.log("Result Swift: ",result);
+    // });
+
+    SwiftCalendarManager.alamofireRequest('sample url',(result) => {
+      console.log("Result Alamofire: ",result);
     });
 
     console.log("Button Tapped.");
