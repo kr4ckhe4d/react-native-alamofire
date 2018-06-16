@@ -31,19 +31,19 @@ export default class App extends Component<Props> {
 
   btnClicked = () =>{
     var AlamofireManagerObjC = NativeModules.AlamofireManagerObjC;
-    // var SwiftCalendarManager = NativeModules.SwiftCalendarManager;
+    var AlamofireManagerSwift = NativeModules.AlamofireManagerSwift;
     
-    AlamofireManagerObjC.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
-      console.log("Result: ",result);
-    });
+    // AlamofireManagerObjC.addEvent('Birthday Party', '4 Privet Drive, Surrey',(result) => {
+    //   console.log("Result: ",result);
+    // });
 
-    // SwiftCalendarManager.addEvent('One', 'Two', 3, (result) => {
+    // AlamofireManagerSwift.addEvent('One', 'Two', 3, (result) => {
     //   console.log("Result Swift: ",result);
     // });
 
-    // SwiftCalendarManager.alamofireRequest('https://jsonplaceholder.typicode.com/posts',(result) => {
-    //   console.log("Result Alamofire: ",result);
-    // });
+    AlamofireManagerSwift.alamofireRequest('https://jsonplaceholder.typicode.com/posts',(result) => {
+      console.log("Result Alamofire Swift: ",result);
+    });
 
     console.log("Button Tapped.");
   }
